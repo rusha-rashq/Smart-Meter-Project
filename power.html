@@ -1,0 +1,193 @@
+<html>
+  <head>
+    <title>Power Consumption Page</title>
+    <style type="text/css">      
+      html, body, #container { 
+        width: 100%; height: 100%; margin: 0; padding: 0; 
+      } 
+    </style>
+    <link rel="stylesheet" href="power-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-base.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+        <div class="heading">
+            <p class="text">Welcome to Electricity Consumption Page</p>
+        </div>
+        <nav>
+          <ul>
+              
+              <a href="index.html" class="button">Home</a>
+              <a href="contacts.html" class="button">Contacts</a>
+              <a href="about.html" class="button">About</a>
+             
+              
+          </ul>
+      </nav>
+        <p class="table-data"><b>Check your household electricity consumption here!</b></p>
+        
+        <table class="content-table">
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>Energy Consumption <br>(in kWh)</th>
+                <th>Bill Amount <br> (in Rs.) </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>January</td>
+                <td>270.6 </td>
+                <td>1338.4</td>
+              </tr>
+              <tr class="active-row">
+                <td>February</td>
+                <td>290.3</td>
+                <td>1454.1</td>
+              </tr>
+              <tr>
+                <td>March</td>
+                <td>215.1</td>
+                <td>1012.6</td>
+              </tr>
+              <tr class="active-row">
+                <td>April</td>
+                <td>320.9</td>
+                <td>1636.6</td>
+              </tr>
+              <tr>
+                <td>May</td>
+                <td>340.8</td>
+                <td>2258.2</td>
+              </tr>
+              <tr class="active-row">
+                <td>June</td>
+                <td>289.2</td>
+                <td>1447.6</td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>250.4</td>
+                <td>1219.8</td>
+              </tr>
+              <tr class="active-row">
+                <td>August</td>
+                <td>277.9</td>
+                <td>1381.3</td>
+              </tr>
+              <tr>
+                <td>September</td>
+                <td>267.5</td>
+                <td>1320.3</td>
+              </tr>
+              <tr class="active-row">
+                <td>October</td>
+                <td>310.8</td>
+                <td>1575.9</td>
+              </tr>
+              <tr>
+                <td>November</td>
+                <td>281.6</td>
+                <td>1402.9</td>
+              </tr>
+              <tr class="active-row">
+                <td>December</td>
+                <td>300.6</td>
+                <td>1514.5</td>
+              </tr>
+            </tbody>
+          </table>
+
+    </div>
+    <script>
+        anychart.onDocumentReady(function () {
+            // create data set on our data
+            var dataSet = anychart.data.set(getData());
+      
+            // map data for the first series, take x from the zero column and value from the first column of data set
+            var firstSeriesData = dataSet.mapAs({ x: 0, value: 1 });
+      
+            // map data for the second series, take x from the zero column and value from the second column of data set
+            var secondSeriesData = dataSet.mapAs({ x: 0, value: 2 });
+      
+            // map data for the third series, take x from the zero column and value from the third column of data set
+            var thirdSeriesData = dataSet.mapAs({ x: 0, value: 3 });
+      
+            // create line chart
+            var chart = anychart.line();
+      
+            // turn on chart animation
+            chart.animation(true);
+      
+            // set chart padding
+            chart.padding([10, 20, 5, 20]);
+      
+            // turn on the crosshair
+            chart.crosshair().enabled(true).yLabel(false).yStroke(null);
+      
+            // set tooltip mode to point
+            chart.tooltip().positionMode('point');
+      
+            // set chart title text settings
+            chart.title(
+              'Billing data of 24 months for a domestic household'
+            );
+      
+            // set yAxis title
+            chart.yAxis().title('Units consumed');
+            chart.xAxis().labels().padding(5);
+      
+            // create first series with mapped data
+            var firstSeries = chart.line(firstSeriesData);
+            firstSeries.name('Energy Consumed');
+            firstSeries.hovered().markers().enabled(true).type('circle').size(4);
+            firstSeries
+              .tooltip()
+              .position('right')
+              .anchor('left-center')
+              .offsetX(5)
+              .offsetY(5);
+      
+            // create second series with mapped data
+            var secondSeries = chart.line(secondSeriesData);
+            secondSeries.name('Bill Amount');
+            secondSeries.hovered().markers().enabled(true).type('circle').size(4);
+            secondSeries
+              .tooltip()
+              .position('right')
+              .anchor('left-center')
+              .offsetX(5)
+              .offsetY(5);
+      
+      
+            // turn the legend on
+            chart.legend().enabled(true).fontSize(13).padding([0, 0, 10, 0]);
+      
+            // set container id for the chart
+            chart.container('container');
+            // initiate chart drawing
+            chart.draw();
+          });
+
+        function getData() {
+            return [
+              ['January',270.6,1338.4],
+              ['February',290.3,1454.1],
+              ['March',215.1,1012.6],
+              ['April',320.9,1636.6],
+              ['May',340.8,2258.2],
+              ['June',289.2,1447.6],
+              ['July',250.4,1219.8],
+              ['August',277.9,1381.3],
+              ['September',267.5,1320.3],
+              ['October',310.8,1575.9],
+              ['November',281.6,1402.9],
+              ['December',300.6,1514.5],
+            ];
+        }
+        
+    </script>
+  </body>
+</html>

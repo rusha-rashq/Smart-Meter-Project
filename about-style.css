@@ -1,0 +1,19 @@
+*{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+}
+.button{
+    background-color: #eb540e;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    position: inherit;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+.button:hover{
+    background-color: #d35115;
+    color:aliceblue;
+}

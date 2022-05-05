@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="bill-account.jpg" width="250px">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="button">Home</a></li>
+                    <li><a href="contacts.html" class="button">Contact</a></li>
+                    <li><a href="acc.html" class="button">Account</a></li>
+                </ul>
+            </nav>
+        </div>
+
+     
+        <div class="account-page">
+            <div class="containers">
+                <div class="row">
+                        <div class="col-2">
+                        </div>
+                        <div class="col-2">
+                            <div class="form-container">
+                                <div class="form-btn">
+                                    <span onclick="login()">Login</span>
+                                    <span onclick="register()">Register</span>
+                                    <hr id="Indicator">
+                                </div>
+                                <form id="LoginForm">
+                                    <input type="text" placeholder="Username">
+                                    <input type="password" placeholder="Password">
+                                    <button type="submit" class="btn">Login</button>
+                                    <a href="">Forgot password</a>
+                                </form>
+    
+                                <form id="RegForm">
+                                    <input type="text" placeholder="Username">
+                                    <input type="email" placeholder="E-mail">
+                                    <input type="password" placeholder="Password">
+                                    <button type="submit" class="btn">Register</button>
+                                </form>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-1">
+                        <h3>Download Our App</h3>
+                        <p>Download our App for Android and iOS</p>
+                        <div class="app-logo">
+                            <img src="android.jpg">
+                            <img src="apple-logo.jpg">
+                        </div>
+                    </div>
+                    <div class="footer-col-3">
+                       <h3>Useful Links</h3>
+                       <ul>
+                           <li>Coupons</li>
+                           <li>Blog Post</li>
+                           <li> Return Policy</li>
+                       </ul>
+                   </div>
+                   <div class="footer-col-4">
+                       <h3>Follow us</h3>
+                       <ul>
+                           <li>Facebook</li>
+                           <li>Instagram</li>
+                           <li>Twitter</li>
+                           <li>Youtube</li>
+                       </ul>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var LoginForm = document.getElementById("LoginForm");
+            var RegForm = document.getElementById("RegForm");
+            var Indicator = document.getElementById("Indicator");
+
+            function register(){
+                    RegForm.style.transform = "translateX(0px)";
+                    LoginForm.style.transform = "translateX(0px)";
+                    Indicator.style.transform = "translateX(100px)";
+                }
+
+                function login(){
+                    RegForm.style.transform = "translateX(300px)";
+                    LoginForm.style.transform = "translateX(300px)";
+                    Indicator.style.transform = "translateX(0px)";
+                }
+
+        </script>
+    </body>
+    </html>
+
+
+

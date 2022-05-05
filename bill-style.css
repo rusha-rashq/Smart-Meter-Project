@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    position: center;
+    }
+    
+    body {
+    font-family:  'Work Sans', sans-serif;
+    font-weight: bold;
+    }
+    
+    .container {
+    height: 610px;
+    width: fit-content;
+    background-image: linear-gradient(#f1e31c, rgb(245, 209, 110));
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-bottom-left-radius: 180px;
+    border-top-right-radius: 150px;
+    }
+    
+    .main-content {
+    height: 235px;
+    background-color: #e98707;
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 80px;
+    border-top: #e98707;
+    }
+    
+    .text {
+    text-align: center;
+    font-size: 250%;
+    text-decoration: aliceblue;
+    color: aliceblue;
+    }
+    .button {
+        background-color: #eb0e0e;
+        border: none;
+        color: white;
+        width: 70px;
+        height: 30px;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 4px;
+        border-radius: 10%;
+    }
+    .button:hover{
+        background: #860404;
+        color: white;
+    }
+    
+    
+    .course {
+    color: black;
+    font-size: 25px;
+    font-weight: bolder;
+    }
+    
+    .centre-content {
+    height: 150px;
+    margin: -70px 30px 20px;
+    color: aliceblue;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 25px;
+    padding-top: 0.5px;
+    background-image: linear-gradient(#6b2d1e, #882514);
+    }
+    
+    .centre-content-h6 {
+    font-size: medium;    
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: normal;
+    }
+    .course {
+        color: aliceblue;
+        margin: auto;
+    }
+    
+    .price {
+    font-size: 40px;
+    margin-left: 5px;
+    bottom: 15px;
+    position: center;
+    }
+    
+    .pay-now-btn {
+    cursor: pointer;
+    color: #fff;
+    font-family: inherit;
+    height: 50px;
+    width: 290px;
+    border: none;
+    margin: 5px 30px;
+    background-color: rgb(250, 79, 27);
+    position: center;
+    }
+    
+    .pay-now-btn:hover{
+        color:#270701;
+    }
+
+    .card-details {
+    background: rgb(245, 233, 73);
+    color: rgb(5, 1, 1);
+    margin: 10px 0;
+    padding: 10px;
+    
+    }
+    
+    .card-details h3 {
+    font-size: 30 px;
+    }
+    
+    .card-details label {
+    font-size: 15px;
+    line-height: 35px;
+    }
+    
+    .submit-now-btn {
+    cursor: pointer;
+    color: #fff;
+    height: 30px;
+    width: 240px;
+    border: black;
+    margin: 5px 30px;
+    background-color: rgb(29, 103, 126);
+    }
